@@ -1,0 +1,23 @@
+sudo: required
+language: java
+jdk: oraclejdk8
+services:
+- docker
+env:
+  global:
+  - secure: "iTNCr4S+fOs1qg2KIyBnBeAOWy/ymav6JSlADQVNpj8S1bHDPDX+LPX58qQYG2+1/u1CtlQldKb0diVD1okKjkBpSaNjWo8f5lmNisgFdQ4sfNfI/B6CgH5/IDD6usyW5vYfLsNt227WyrwYXIrMebFm7VsplP1UcKySFEe0T5o+bR/LODYSfrTKNF0tq2xBswtVi8yvfHYYCZxOBR98r2qsAkHv8dOhouDlB0xyLZgWPKGCvN/cZ9tI1998hB78sIe/2LLG+VaAKkB3R2YT921UECD6LlOwD5Rk2q7HZmQNbRfTRWD/Jh6mPTCbUpnW+3DhWo0EiJJbt4JLKsOPxrnhtrvpG8CoM1K42K0p0/y3IrVK0Xid58sKcxOtHjCJyMH5QDq9KArFVTkTUI56YEy7exQHe3Q4VmAvZizZ8/9qnTAYGsJC3wuEyh7znIF3VH4ggdVbqMEJrvdXVcWObfrb7msfA2kUqqoWdD+p2CpUvs7MYi4yfDUcJg+OFHeJJ9DupHI+1H2g0m2E//uKGv68myipQb3sZwOJd0gfdIsBoSdOQ87xTJ/PpA9YengLWeup1+3gftmcRAtRLi0EoVnXiZOJHQAj7P5mGSN9IFLF/2PL6Q8tc7muvG9VQ28ABU1WlWljwDzecD7SueLdgWuFNvI48qf/jjyrU8loO9w="
+  - secure: "FNilXQxZGzZcYsP7LoJSgxWRd0So6FUOj6WXKqxd8/3pfi2QBzvGf2h2O041RlBdza6d6r/q4IqRk9AAFPMKSJBys0xqphEir5IaERURRcFxrMWfheBbsGEhLFNCtPUWpHvVVALo16dp43C53/XtshKG7xXGfEDWH9znwmDaKL8Vh4HYQud3y+00DSBRavdlJPXfGnEOaN+EV66zdppx7jM2irrPuev/pMYt74swTPBDnsZhyI4zVZp0Jw85XrPLgU2Qw2iOsitvKK+TU/C4T4DGM3nEcQSlDa/a670YnlBgAR7jR/8ACR2mzSO+9U2O6HaXlV4ABoy2RuACAsHPpbiVHWMqpOobyfOd0QPXuSAK6raPJGgdAIqV5aKWGuSSot3ICLi5Y9ntCJGVPM2WD7+kCLtjgMaZHp4uxTvb0f3swytDiS/PdwU1YvshL93Us8fyR+lbF98qp71GejtpkOuswbR6zsgyFQzbNe1SpGSTAXK7zoZHp9vfQ79nPmEjdrmaccNzrWjod8RJdM+N/RcP/K17l4ytkOAUipUwWLifCAtJFs2x5YIaHpPTRQyxBryxiLazwQa/bDDNWHguKPFvtYc8AFXV4cDoNjFJQoykdo/SkhfNl2as7Mizg2olsISIu6gh6Uc4hPDyDqn9b1/3o/hUBqO/Qz4u484qJZM="
+  - COMMIT=${TRAVIS_COMMIT::7}
+
+script:
+- ./mvnw clean install -B
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+- docker login -u $DOCKER_USER -p $DOCKER_PASS
+- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH
+  ; fi`
+- export IMAGE_NAME=sivaprasadreddy/geeksplaza
+- docker build -t $IMAGE_NAME:$COMMIT .
+- docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
+- docker push $IMAGE_NAME
