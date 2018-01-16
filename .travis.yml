@@ -24,6 +24,11 @@ script:
 - ./mvnw clean install -B
 - sonar-scanner
 
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
