@@ -10,6 +10,9 @@ env:
   - secure: "GEwr0fYfX8dGuSTcx1JIrje5VcCgy+KftS/jmS6/cjAkWpPyo3LXDnQsG/9vDE7Q+bzNkGONZXbIl2bEZdTqZWr3FSP+qQjZrVpBkyyict/ej36obbvHVJV0sNNMNryJtXJHsWD2+22rVU46qI062Ybc8Bx3qUuQ7KMlMctPWF8YsgjTuQYcKFYb1IQPuXb8VjCqpBZGIBfCwVxLPcstUziZ/UPKXJq0r0LUfUGvH8W++RIDYqwWCemuKGbHVGMRQ0UPku0wV1Tc5bH+Yy83UzNRgs0QS16LjlzlZv5zJixPf3N3w2IPZ+dilXe1nQsyb7ywIF0ycXNuCDJ+fXP3GhkbqTcqijbwOwTNloIV/hsM1VX8zAQjoYP1ku80T+8+0nUl4uEH18gW1XAfNW/Utr82+gtvro+cDBtHnjG9Cy9Wv0gt1KYJWAG4AS9+cP258mBhCHQG/3xRj/b7/kRGWwibxRwcGJJi3CHKeNeONqO9xsTdN1GXUXAEpAjfSixEyYA0uLba2IF1eRn4g72U+UmaBk9bxY/wKir+hHLxFtOwGfLM1nznlQ8+JX7bU7sOJZwnEjVP0+Rlt8HbRqt+G66hkzNwlUu4YByZv6ChH9ot94LdI3ZYaEolnkD+PaP5hj7AIiL/c+Saz1ApvI4cdyeqAo2+FflkjY+Qdhvfnxw="
   - COMMIT=${TRAVIS_COMMIT::7}
 
+git:
+  depth: 500
+
 script:
 - ./mvnw clean install -B
 
