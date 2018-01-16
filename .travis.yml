@@ -22,7 +22,7 @@ addons:
 
 script:
 - ./mvnw clean install -B
-- sonar-scanner
+- ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
 
 cache:
   directories:
