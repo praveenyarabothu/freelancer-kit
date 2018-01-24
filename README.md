@@ -1,3 +1,2 @@
-# Geeks Plaza
+# Freelancer Kit
 
-A categorized bookmarks application built using SpringBoot.

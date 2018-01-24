@@ -30,11 +30,10 @@ cache:
     - '$HOME/.sonar/cache'
 
 after_success:
-- bash <(curl -s https://codecov.io/bash)
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
 - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH
   ; fi`
-- export IMAGE_NAME=sivaprasadreddy/geeksplaza
+- export IMAGE_NAME=sivaprasadreddy/freelancer-kit
 - docker build -t $IMAGE_NAME:$COMMIT .
 - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME

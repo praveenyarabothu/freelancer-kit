@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>in.sivalabs</groupId>
-	<artifactId>geeksplaza</artifactId>
+	<artifactId>freelancer-kit</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>GeeksPlaza</name>
+	<name>freelancer-kit</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -114,8 +114,8 @@
 				<version>0.7.9</version>
 				<configuration>
 					<excludes>
-						<exclude>in/sivalabs/geeksplaza/entities/*</exclude>
-						<exclude>in/sivalabs/geeksplaza/*Application</exclude>
+						<exclude>in/sivalabs/freelancerkit/entities/*</exclude>
+						<exclude>in/sivalabs/freelancerkit/*Application</exclude>
 					</excludes>
 				</configuration>
 				<executions>

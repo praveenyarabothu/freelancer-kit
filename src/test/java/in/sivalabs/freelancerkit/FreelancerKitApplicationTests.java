@@ -1,4 +1,4 @@
-package in.sivalabs.geeksplaza;
+package in.sivalabs.freelancerkit;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GeeksplazaApplicationTests {
+public class FreelancerKitApplicationTests {
 
 	@Test
 	public void contextLoads() {

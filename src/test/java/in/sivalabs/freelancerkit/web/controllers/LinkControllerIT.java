@@ -1,7 +1,7 @@
-package in.sivalabs.geeksplaza.web.controllers;
+package in.sivalabs.freelancerkit.web.controllers;
 
-import in.sivalabs.geeksplaza.GeeksplazaApplication;
-import in.sivalabs.geeksplaza.entities.Link;
+import in.sivalabs.freelancerkit.FreelancerKitApplication;
+import in.sivalabs.freelancerkit.entities.Link;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = GeeksplazaApplication.class, webEnvironment= RANDOM_PORT)
+@SpringBootTest(classes = FreelancerKitApplication.class, webEnvironment= RANDOM_PORT)
 public class LinkControllerIT {
 
     @Autowired

@@ -1,7 +1,7 @@
-package in.sivalabs.geeksplaza.web.controllers;
+package in.sivalabs.freelancerkit.web.controllers;
 
-import in.sivalabs.geeksplaza.entities.Link;
-import in.sivalabs.geeksplaza.repositories.LinkRepository;
+import in.sivalabs.freelancerkit.entities.Link;
+import in.sivalabs.freelancerkit.repositories.LinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.GetMapping;

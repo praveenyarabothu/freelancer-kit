@@ -1,4 +1,4 @@
-package in.sivalabs.geeksplaza.web.controllers;
+package in.sivalabs.freelancerkit.web.controllers;
 import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.BDDMockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -7,7 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
-import in.sivalabs.geeksplaza.entities.Link;
+import in.sivalabs.freelancerkit.entities.Link;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import in.sivalabs.geeksplaza.repositories.LinkRepository;
+import in.sivalabs.freelancerkit.repositories.LinkRepository;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers= LinkController.class)

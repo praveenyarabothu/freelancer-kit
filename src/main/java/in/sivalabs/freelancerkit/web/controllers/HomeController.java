@@ -1,4 +1,4 @@
-package in.sivalabs.geeksplaza.web.controllers;
+package in.sivalabs.freelancerkit.web.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

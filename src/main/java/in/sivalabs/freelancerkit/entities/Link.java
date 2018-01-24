@@ -1,4 +1,4 @@
-package in.sivalabs.geeksplaza.entities;
+package in.sivalabs.freelancerkit.entities;
 
 import lombok.*;
 
