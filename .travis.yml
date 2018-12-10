@@ -22,7 +22,7 @@ script:
 cache:
   directories:
     - '$HOME/.m2/repository'
-        - '$HOME/.sonar/cache'
+    - '$HOME/.sonar/cache'
 
 
 
